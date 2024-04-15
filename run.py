@@ -8,7 +8,6 @@ def run_command_new_window(cmd):
 
 
 def main():
-    # 设置工作目录
     base_dir = r"C:\OpenEduECNU"
 
     # 问答/出题
