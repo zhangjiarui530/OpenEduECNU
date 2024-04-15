@@ -1,0 +1,5 @@
+[server]
+port = 6688
+
+enableXsrfProtection = false
+enableCORS = false
