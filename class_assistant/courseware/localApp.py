@@ -7,7 +7,7 @@ start_time = time.time()  # 记录开始时间
 
 model_path = r'C:\model\THUDM\chatglm3-6b'
 # model_path = r'C:\model\Qwen\Qwen1.5-4B-Chat'
-save_directory = r"C:\开放原子\4.17\model_low_bit"
+save_directory = r"C:\OpenEduECNU\model_low_bit"
 model = AutoModelForCausalLM.load_low_bit(save_directory, trust_remote_code=True)
 model = model.to('xpu')
 tokenizer = AutoTokenizer.from_pretrained(model_path,
