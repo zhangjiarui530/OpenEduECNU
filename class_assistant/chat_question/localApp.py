@@ -47,7 +47,7 @@ class PDFFileLoader():
 
 model_path = r'C:\model\THUDM\chatglm3-6b'
 # model_path = r'C:\model\Qwen\Qwen1.5-4B-Chat'
-save_directory = r"C:\开放原子\4.17\model_low_bit"
+save_directory = r"C:\OpenEduECNU\model_low_bit"
 model = AutoModelForCausalLM.load_low_bit(save_directory, trust_remote_code=True)
 model = model.to('xpu')
 tokenizer = AutoTokenizer.from_pretrained(model_path,
@@ -55,7 +55,6 @@ tokenizer = AutoTokenizer.from_pretrained(model_path,
 
 
 def get_embeddings(texts):
-    '''使用本地 Qwen1.5-4B-Chat 模型获取文本的嵌入向量'''
     # inputs = tokenizer(texts, padding=True, truncation=True, return_tensors="pt")
     inputs = tokenizer(texts, padding=True, truncation=True, return_tensors="pt").to('xpu')
     with torch.no_grad():
